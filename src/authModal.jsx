@@ -31,8 +31,7 @@ export default function AuthModal({ onLoginSuccess }) {
   const [infoMsg, setInfoMsg] = useState("");
 
   // Dynamically points to the laptop's IP whether accessed locally or over Wi-Fi/hotspot
-  const API_BASE = `http://${window.location.hostname}:8000`;
-
+  const API_BASE = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:8000`;
   const handleImagePick = (e) => {
     const file = e.target.files[0];
     if (file) {
